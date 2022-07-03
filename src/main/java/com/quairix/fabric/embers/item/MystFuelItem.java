@@ -45,9 +45,6 @@ public class MystFuelItem extends Item {
 	public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
 
 		// default white text
-		tooltip.add( new TranslatableText("item.tutorial.fabric_item.tooltip") );
-
-		// formatted red text
-		tooltip.add( new TranslatableText("item.tutorial.fabric_item.tooltip").formatted(Formatting.RED) );
+		tooltip.add( new TranslatableText("item.embers.myst_fuel_item.tooltip") );
 	}
 }

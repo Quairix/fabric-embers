@@ -1,5 +1,7 @@
 package com.quairix.fabric.embers;
 
+import com.quairix.fabric.embers.block.NickelOreBlock;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,5 +43,6 @@ public class EmbersMod implements ModInitializer {
 
 		LOGGER.info("Init modId [{}] with version [{}]!", ID, Create.VERSION);
 		MystFuelItem.registerItem();
+		NickelOreBlock.onInitialize();
 	}
 }
