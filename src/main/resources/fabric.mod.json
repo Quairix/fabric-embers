@@ -1,25 +1,26 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "embers",
   "version": "${version}",
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Embers Mod",
+  "description": "No idea what is this",
   "authors": [
-    "Me!"
+    "Quairix",
+    "Vpolakk"
   ],
   "contact": {
-    "sources": "https://github.com/Fabricators-of-Create/create-fabric-addon-template"
+    "sources": "https://github.com/Quairix/mc-fabric-addon"
   },
   "license": "CC0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/embers/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.example.modid.ExampleMod"
+      "com.quairix.fabric.embers.EmbersMod"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "embers.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${loader_version}",
