@@ -1,17 +1,23 @@
 package com.quairix.fabric.embers;
 
+import static com.quairix.fabric.embers.block.EmberBoreBlock.EMBER_BORE_BLOCK;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.quairix.fabric.embers.block.DemoBlock;
+import com.quairix.fabric.embers.block.EmberBoreBlock;
 import com.quairix.fabric.embers.block.NickelOreBlock;
 import com.quairix.fabric.embers.entity.DemoBlockEntity;
+import com.quairix.fabric.embers.entity.EmberBoreBlockEntity;
 import com.quairix.fabric.embers.item.MystFuelItem;
 import com.simibubi.create.Create;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -44,6 +50,9 @@ public class EmbersMod implements ModInitializer {
 		LOGGER.info("Init modId [{}] with version [{}]!", ID, Create.VERSION);
 		DemoBlockEntity.onInit();
 		DemoBlock.onInitialize();
+		EmberBoreBlockEntity.onInit();
+		EmberBoreBlock.onInitialize();
+		BlockRenderLayerMap.INSTANCE.putBlock(EMBER_BORE_BLOCK, RenderLayer.getCutout());
 		MystFuelItem.registerItem();
 		NickelOreBlock.onInitialize();
 	}

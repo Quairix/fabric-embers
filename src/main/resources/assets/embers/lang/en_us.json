@@ -1,5 +1,7 @@
 {
   "item.embers.myst_fuel_item": "Mysterious fuel",
   "item.embers.myst_fuel_item.tooltip": "Place it into furnace",
-  "block.embers.nickel_ore_block": "Nickel Ore"
+  "block.embers.ember_bore_block": "Ember Bore",
+  "block.embers.demo_block": "Demo Block",
+  "block.embers.chargeable_block": "Chargeable Block"
 }

@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 32],
 	"textures": {
-		"1": "Moveable"
+		"1": "embers:block/ember_bore_block_movable"
 	},
 	"elements": [
 		{
@@ -264,7 +264,7 @@
 	],
 	"groups": [
 		{
-			"name": "MoveablePart",
+			"name": "MovablePart",
 			"origin": [8, 8, 8],
 			"color": 0,
 			"children": [
