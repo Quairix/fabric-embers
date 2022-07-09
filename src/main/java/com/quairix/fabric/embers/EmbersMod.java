@@ -1,10 +1,11 @@
 package com.quairix.fabric.embers;
 
-import com.quairix.fabric.embers.block.NickelOreBlock;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.quairix.fabric.embers.block.DemoBlock;
+import com.quairix.fabric.embers.block.NickelOreBlock;
+import com.quairix.fabric.embers.entity.DemoBlockEntity;
 import com.quairix.fabric.embers.item.MystFuelItem;
 import com.simibubi.create.Create;
 
@@ -33,7 +34,6 @@ public class EmbersMod implements ModInitializer {
 				stacks.add(new ItemStack(Blocks.BONE_BLOCK));
 				stacks.add(new ItemStack(Items.APPLE));
 				stacks.add(PotionUtil.setPotion(new ItemStack(Items.POTION), Potions.WATER));
-				stacks.add(ItemStack.EMPTY);
 				stacks.add(new ItemStack(Items.IRON_SHOVEL));
 			})
 			.build();
@@ -42,6 +42,8 @@ public class EmbersMod implements ModInitializer {
 	public void onInitialize() {
 
 		LOGGER.info("Init modId [{}] with version [{}]!", ID, Create.VERSION);
+		DemoBlockEntity.onInit();
+		DemoBlock.onInitialize();
 		MystFuelItem.registerItem();
 		NickelOreBlock.onInitialize();
 	}
