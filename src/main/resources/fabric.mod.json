@@ -17,6 +17,11 @@
   "entrypoints": {
     "main": [
       "com.quairix.fabric.embers.EmbersMod"
+    ],
+    "client": [
+      {
+        "value": "com.quairix.fabric.embers.EmbersModClient"
+      }
     ]
   },
   "mixins": [

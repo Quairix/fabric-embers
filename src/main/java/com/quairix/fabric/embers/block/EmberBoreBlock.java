@@ -1,7 +1,5 @@
 package com.quairix.fabric.embers.block;
 
-import static com.quairix.fabric.embers.entity.EmberBoreBlockEntity.EMBER_BORE_BLOCK_ENTITY;
-
 import com.quairix.fabric.embers.entity.EmberBoreBlockEntity;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -13,8 +11,6 @@ import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.Material;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.BlockEntityTicker;
-import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
@@ -60,9 +56,7 @@ public class EmberBoreBlock extends BlockWithEntity {
 //		if (world.isClient) return ActionResult.SUCCESS;
 		final var blockEntityBase = world.getBlockEntity(blockPos);
 
-
-		if (blockEntityBase != null || (blockEntityBase instanceof EmberBoreBlockEntity)) {
-
+		if (blockEntityBase == null || !(blockEntityBase instanceof EmberBoreBlockEntity)) {
 			return ActionResult.FAIL;
 		}
 
@@ -74,24 +68,12 @@ public class EmberBoreBlock extends BlockWithEntity {
 				blockEntity.setStack(0, player.getStackInHand(hand).copy());
 				// Remove the stack from the player's hand
 				player.getStackInHand(hand).setCount(0);
-			} else if (blockEntity.getStack(1).isEmpty()) {
-				blockEntity.setStack(1, player.getStackInHand(hand).copy());
-				player.getStackInHand(hand).setCount(0);
-			} else {
-				// If the inventory is full we'll print it's contents
-				System.out.println("The first slot holds "
-						+ blockEntity.getStack(0) + " and the second slot holds " + blockEntity.getStack(1));
 			}
 		} else {
 			// If the player is not holding anything we'll get give him the items in the block entity one by one
 
 			// Find the first slot that has an item and give it to the player
-			if (!blockEntity.getStack(1).isEmpty()) {
-				// Give the player the stack in the inventory
-				player.getInventory().offerOrDrop(blockEntity.getStack(1));
-				// Remove the stack from the inventory
-				blockEntity.removeStack(1);
-			} else if (!blockEntity.getStack(0).isEmpty()) {
+			if (!blockEntity.getStack(0).isEmpty()) {
 				player.getInventory().offerOrDrop(blockEntity.getStack(0));
 				blockEntity.removeStack(0);
 			}
@@ -103,9 +85,9 @@ public class EmberBoreBlock extends BlockWithEntity {
 	public BlockRenderType getRenderType(BlockState state) {
 		return BlockRenderType.MODEL;
 	}
-
-	@Override
-	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-		return checkType(type, EMBER_BORE_BLOCK_ENTITY, (world1, pos, state1, be) -> be.tick(world1, pos, state1, be));
-	}
+//
+//	@Override
+//	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
+//		return checkType(type, EMBER_BORE_BLOCK_ENTITY, (world1, pos, state1, be) -> be.tick(world1, pos, state1, be));
+//	}
 }

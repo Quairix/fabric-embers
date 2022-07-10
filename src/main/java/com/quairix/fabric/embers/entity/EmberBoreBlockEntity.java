@@ -23,7 +23,6 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.world.World;
 
 public class EmberBoreBlockEntity extends BlockEntity implements ImplementedInventory, SidedInventory {
 
@@ -40,14 +39,14 @@ public class EmberBoreBlockEntity extends BlockEntity implements ImplementedInve
 	public DefaultedList<ItemStack> getItems() {
 		return items;
 	}
-
-	public void tick(World world, BlockPos pos, BlockState state, EmberBoreBlockEntity be) {
-//		if (number++ > 5) {
-//			world.setBlockState(pos.add(0, 0, 1), isLava ? Blocks.REDSTONE_BLOCK.getDefaultState() : Blocks.GOLD_BLOCK.getDefaultState());
-//			number = 0;
-//			isLava = !isLava;
-//		}
-	}
+//
+//	public void tick(World world, BlockPos pos, BlockState state, EmberBoreBlockEntity be) {
+////		if (number++ > 5) {
+////			world.setBlockState(pos.add(0, 0, 1), isLava ? Blocks.REDSTONE_BLOCK.getDefaultState() : Blocks.GOLD_BLOCK.getDefaultState());
+////			number = 0;
+////			isLava = !isLava;
+////		}
+//	}
 	@Override
 	public int[] getAvailableSlots(Direction var1) {
 		// Just return an array of all slots

@@ -5,9 +5,11 @@ import static com.quairix.fabric.embers.block.EmberBoreBlock.EMBER_BORE_BLOCK;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.quairix.fabric.embers.block.ChargeableBlock;
 import com.quairix.fabric.embers.block.DemoBlock;
 import com.quairix.fabric.embers.block.EmberBoreBlock;
 import com.quairix.fabric.embers.block.NickelOreBlock;
+import com.quairix.fabric.embers.entity.ChargeableBlockEntity;
 import com.quairix.fabric.embers.entity.DemoBlockEntity;
 import com.quairix.fabric.embers.entity.EmberBoreBlockEntity;
 import com.quairix.fabric.embers.item.MystFuelItem;
@@ -50,6 +52,8 @@ public class EmbersMod implements ModInitializer {
 		LOGGER.info("Init modId [{}] with version [{}]!", ID, Create.VERSION);
 		DemoBlockEntity.onInit();
 		DemoBlock.onInitialize();
+		ChargeableBlockEntity.onInit();
+		ChargeableBlock.onInitialize();
 		EmberBoreBlockEntity.onInit();
 		EmberBoreBlock.onInitialize();
 		BlockRenderLayerMap.INSTANCE.putBlock(EMBER_BORE_BLOCK, RenderLayer.getCutout());
