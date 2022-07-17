@@ -1,5 +1,8 @@
 {
   "variants": {
-    "": { "model": "embers:block/ember_bore_block" }
+    "facing=north": { "model": "embers:block/ember_bore_block" },
+    "facing=south": { "model": "embers:block/ember_bore_block", "y": 180 },
+    "facing=west":  { "model": "embers:block/ember_bore_block", "y": 270 },
+    "facing=east":  { "model": "embers:block/ember_bore_block", "y": 90 }
   }
 }
