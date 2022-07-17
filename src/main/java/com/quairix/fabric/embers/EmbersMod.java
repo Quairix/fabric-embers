@@ -2,6 +2,9 @@ package com.quairix.fabric.embers;
 
 import static com.quairix.fabric.embers.block.EmberBoreBlock.EMBER_BORE_BLOCK;
 
+import com.quairix.fabric.embers.base.EmbersEvents;
+import com.quairix.fabric.embers.base.EmbersNetworkProvider;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -46,6 +49,9 @@ public class EmbersMod implements ModInitializer {
 			})
 			.build();
 
+	//Мои инициализаторы - не понимаешь спрашивай. Делитать нельзя
+	public static final EmbersNetworkProvider EMBERS_NETWORK_PROVIDER = new EmbersNetworkProvider();
+
 	@Override
 	public void onInitialize() {
 
@@ -59,5 +65,8 @@ public class EmbersMod implements ModInitializer {
 		BlockRenderLayerMap.INSTANCE.putBlock(EMBER_BORE_BLOCK, RenderLayer.getCutout());
 		MystFuelItem.registerItem();
 		NickelOreBlock.onInitialize();
+
+		//Автобус событий - тут хуки на все события кубача
+		EmbersEvents.register();
 	}
 }
