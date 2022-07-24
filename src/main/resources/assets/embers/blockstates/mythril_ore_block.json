@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "embers:block/mythril_ore_block" }
+  }
+}

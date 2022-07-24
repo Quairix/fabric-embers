@@ -5,6 +5,8 @@ import static com.quairix.fabric.embers.block.DemoBlock.DEMO_BLOCK;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.quairix.fabric.embers.util.EmberUtils;
+
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -14,7 +16,6 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.Packet;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
@@ -67,7 +68,7 @@ public class DemoBlockEntity extends BlockEntity {
 
 	public static void onInit() {
 		DEMO_BLOCK_ENTITY = Registry.register(
-				Registry.BLOCK_ENTITY_TYPE, new Identifier("embers", "demo_block_entity"),
+				Registry.BLOCK_ENTITY_TYPE, EmberUtils.getIdentifier("demo_block_entity"),
 				FabricBlockEntityTypeBuilder.create(DemoBlockEntity::new, DEMO_BLOCK).build(null));
 	}
 }

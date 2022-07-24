@@ -3,6 +3,7 @@ package com.quairix.fabric.embers.block;
 import static net.minecraft.state.property.Properties.HORIZONTAL_FACING;
 
 import com.quairix.fabric.embers.entity.EmberBoreBlockEntity;
+import com.quairix.fabric.embers.util.EmberUtils;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -27,7 +28,6 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.BlockMirror;
 import net.minecraft.util.BlockRotation;
 import net.minecraft.util.Hand;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -50,8 +50,8 @@ public class EmberBoreBlock extends BlockWithEntity {
 	}
 
 	public static void onInitialize() {
-		Registry.register(Registry.BLOCK, new Identifier("embers", "ember_bore_block"), EMBER_BORE_BLOCK);
-		Registry.register(Registry.ITEM, new Identifier("embers", "ember_bore_block"), new BlockItem(EMBER_BORE_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+		Registry.register(Registry.BLOCK, EmberUtils.getIdentifier("ember_bore_block"), EMBER_BORE_BLOCK);
+		Registry.register(Registry.ITEM, EmberUtils.getIdentifier("ember_bore_block"), new BlockItem(EMBER_BORE_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 	}
 
 	@Override

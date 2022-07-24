@@ -2,20 +2,22 @@ package com.quairix.fabric.embers;
 
 import static com.quairix.fabric.embers.block.EmberBoreBlock.EMBER_BORE_BLOCK;
 
-import com.quairix.fabric.embers.base.EmbersEvents;
-import com.quairix.fabric.embers.base.EmbersNetworkProvider;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.quairix.fabric.embers.base.EmbersEvents;
+import com.quairix.fabric.embers.base.EmbersNetworkProvider;
 import com.quairix.fabric.embers.block.ChargeableBlock;
 import com.quairix.fabric.embers.block.DemoBlock;
 import com.quairix.fabric.embers.block.EmberBoreBlock;
+import com.quairix.fabric.embers.block.MythrilBlock;
+import com.quairix.fabric.embers.block.MythrilOreBlock;
 import com.quairix.fabric.embers.block.NickelOreBlock;
 import com.quairix.fabric.embers.entity.ChargeableBlockEntity;
 import com.quairix.fabric.embers.entity.DemoBlockEntity;
 import com.quairix.fabric.embers.entity.EmberBoreBlockEntity;
 import com.quairix.fabric.embers.item.MystFuelItem;
+import com.quairix.fabric.embers.item.MythrilIngotItem;
 import com.simibubi.create.Create;
 
 import net.fabricmc.api.ModInitializer;
@@ -65,6 +67,9 @@ public class EmbersMod implements ModInitializer {
 		BlockRenderLayerMap.INSTANCE.putBlock(EMBER_BORE_BLOCK, RenderLayer.getCutout());
 		MystFuelItem.registerItem();
 		NickelOreBlock.onInitialize();
+		MythrilOreBlock.onInitialize();
+		MythrilBlock.onInitialize();
+		MythrilIngotItem.registerItem();
 
 		//Автобус событий - тут хуки на все события кубача
 		EmbersEvents.register();

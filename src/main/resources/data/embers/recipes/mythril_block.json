@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    "WWW",
+    "WWW"
+  ],
+  "key": {
+    "W": {
+      "item": "embers:mythril_ingot_item"
+    }
+  },
+  "result": {
+    "item": "embers:mythril_block",
+    "count": 1
+  },
+  "group": "embers"
+}

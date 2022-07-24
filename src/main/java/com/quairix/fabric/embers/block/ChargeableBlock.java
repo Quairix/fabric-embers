@@ -7,6 +7,7 @@ import java.util.Objects;
 import org.jetbrains.annotations.Nullable;
 
 import com.quairix.fabric.embers.entity.ChargeableBlockEntity;
+import com.quairix.fabric.embers.util.EmberUtils;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -30,7 +31,6 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.text.LiteralText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -48,8 +48,8 @@ public class ChargeableBlock extends BlockWithEntity {
 	}
 
 	public static void onInitialize() {
-		Registry.register(Registry.BLOCK, new Identifier("embers", "chargeable_block"), CHARGEABLE_BLOCK);
-		Registry.register(Registry.ITEM, new Identifier("embers", "chargeable_block"), new BlockItem(CHARGEABLE_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+		Registry.register(Registry.BLOCK, EmberUtils.getIdentifier("chargeable_block"), CHARGEABLE_BLOCK);
+		Registry.register(Registry.ITEM, EmberUtils.getIdentifier("chargeable_block"), new BlockItem(CHARGEABLE_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 	}
 
 	@Override

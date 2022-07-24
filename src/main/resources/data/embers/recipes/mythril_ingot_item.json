@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "embers:mythril_ore_block"
+  },
+  "result": "embers:mythril_ingot_item",
+  "experience": 0.15,
+  "cookingtime": 200,
+  "group": "embers"
+}

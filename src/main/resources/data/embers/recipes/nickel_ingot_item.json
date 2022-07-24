@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "embers:nickel_ore_block"
+  },
+  "result": "minecraft:iron_ingot",
+  "experience": 0.15,
+  "cookingtime": 200,
+  "group": "embers"
+}

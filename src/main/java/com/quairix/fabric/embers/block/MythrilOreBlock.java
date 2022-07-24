@@ -28,37 +28,38 @@ import net.minecraft.world.gen.placementmodifier.CountPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 
-public class NickelOreBlock extends OreBlock {
+public class MythrilOreBlock extends OreBlock {
 
-	public static final Block NICKEL_ORE_BLOCK = new NickelOreBlock(FabricBlockSettings.of(Material.METAL).strength(4.0f).requiresTool());
+	public static final Block MYTHRIL_ORE_BLOCK = new MythrilOreBlock(FabricBlockSettings.of(Material.METAL).strength(3.0F, 3.0F).requiresTool());
 
-	private static final ConfiguredFeature<?, ?> OVERWORLD_NICKEL_ORE_CONFIGURED_FEATURE = new ConfiguredFeature
+	// todo: генерация в структуре
+	private static final ConfiguredFeature<?, ?> OVERWORLD_MYTHRIL_ORE_CONFIGURED_FEATURE = new ConfiguredFeature
 			(Feature.ORE, new OreFeatureConfig(
 					OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
-					NICKEL_ORE_BLOCK.getDefaultState(),
+					MYTHRIL_ORE_BLOCK.getDefaultState(),
 					9)); // vein size
 
-	public static final PlacedFeature OVERWORLD_NICKEL_ORE_PLACED_FEATURE = new PlacedFeature(
-			RegistryEntry.of(OVERWORLD_NICKEL_ORE_CONFIGURED_FEATURE),
+	public static final PlacedFeature OVERWORLD_MYTHRIL_ORE_PLACED_FEATURE = new PlacedFeature(
+			RegistryEntry.of(OVERWORLD_MYTHRIL_ORE_CONFIGURED_FEATURE),
 			Arrays.asList(
 					CountPlacementModifier.of(20), // number of veins per chunk
 					SquarePlacementModifier.of(), // spreading horizontally
 					HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(64))
 			)); // height
 
-	public NickelOreBlock(final Settings settings) {
+	public MythrilOreBlock(final Settings settings) {
 		super(settings);
 	}
 
 	public static void onInitialize() {
-		Registry.register(Registry.BLOCK, EmberUtils.getIdentifier("nickel_ore_block"), NICKEL_ORE_BLOCK);
-		Registry.register(Registry.ITEM, EmberUtils.getIdentifier("nickel_ore_block"), new BlockItem(NICKEL_ORE_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+		Registry.register(Registry.BLOCK, EmberUtils.getIdentifier("mythril_ore_block"), MYTHRIL_ORE_BLOCK);
+		Registry.register(Registry.ITEM, EmberUtils.getIdentifier("mythril_ore_block"), new BlockItem(MYTHRIL_ORE_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
-				EmberUtils.getIdentifier("overworld_nickel_ore"), OVERWORLD_NICKEL_ORE_CONFIGURED_FEATURE);
-		Registry.register(BuiltinRegistries.PLACED_FEATURE, EmberUtils.getIdentifier("overworld_nickel_ore"),
-				OVERWORLD_NICKEL_ORE_PLACED_FEATURE);
+				EmberUtils.getIdentifier("overworld_mythril_ore"), OVERWORLD_MYTHRIL_ORE_CONFIGURED_FEATURE);
+		Registry.register(BuiltinRegistries.PLACED_FEATURE, EmberUtils.getIdentifier("overworld_mythril_ore"),
+				OVERWORLD_MYTHRIL_ORE_PLACED_FEATURE);
 		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
 				RegistryKey.of(Registry.PLACED_FEATURE_KEY,
-						EmberUtils.getIdentifier("overworld_nickel_ore")));
+						EmberUtils.getIdentifier("overworld_mythril_ore")));
 	}
 }

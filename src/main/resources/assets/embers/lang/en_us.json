@@ -3,5 +3,9 @@
   "item.embers.myst_fuel_item.tooltip": "Place it into furnace",
   "block.embers.ember_bore_block": "Ember Bore",
   "block.embers.demo_block": "Demo Block",
+  "block.embers.nickel_ore_block": "Nickel Ore",
+  "block.embers.mythril_ore_block": "Mythril Ore",
+  "block.embers.mythril_block": "Mythril Block",
+  "item.embers.mythril_ingot_item": "Mythril Ingot",
   "block.embers.chargeable_block": "Chargeable Block"
 }

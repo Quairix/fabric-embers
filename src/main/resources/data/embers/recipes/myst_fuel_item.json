@@ -16,5 +16,6 @@
   "result": {
     "item": "embers:myst_fuel_item",
     "count": 4
-  }
+  },
+  "group": "embers"
 }

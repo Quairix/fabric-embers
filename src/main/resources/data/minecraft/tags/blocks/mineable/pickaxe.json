@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "embers:nickel_ore_block"
+    "embers:nickel_ore_block",
+    "embers:mythril_ore_block",
+    "embers:mythril_block"
   ]
 }
